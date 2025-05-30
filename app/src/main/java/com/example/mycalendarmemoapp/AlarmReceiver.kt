@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import com.example.mycalendarmemoapp.util.NotificationHelper
+import android.util.Log
 
 class AlarmReceiver : BroadcastReceiver() {
 
@@ -14,6 +15,7 @@ class AlarmReceiver : BroadcastReceiver() {
     }
 
     override fun onReceive(context: Context, intent: Intent) {
+        Log.d("AlarmReceiver", "==== ALARM RECEIVED AT: ${System.currentTimeMillis()} ====")
         val memoId = intent.getIntExtra(EXTRA_MEMO_ID, -1)
         val memoTitle = intent.getStringExtra(EXTRA_MEMO_TITLE)
 

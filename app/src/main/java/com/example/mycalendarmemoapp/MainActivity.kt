@@ -9,6 +9,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.example.mycalendarmemoapp.ui.navigation.NavGraph
 import com.example.mycalendarmemoapp.ui.theme.MyCalendarMemoAppTheme
+import com.example.mycalendarmemoapp.util.NotificationHelper
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +25,6 @@ class MainActivity : ComponentActivity() {
             }
         }
         // 你可以在這裡或 Application 類別中建立通知頻道
-        // NotificationHelper.createNotificationChannel(this)
+        NotificationHelper.createNotificationChannel(this)
     }
 }

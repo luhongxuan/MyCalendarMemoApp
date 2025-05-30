@@ -43,16 +43,6 @@ fun AddMemoScreen(navController: NavController, viewModel: MemoViewModel) {
             calendar.get(Calendar.MINUTE),
             true // 24 小時制
         ).show()
-        // 因為 TimePickerDialog 不是 Compose 元件，需要手動處理 showTimePicker 狀態
-        // 這裡我們只在需要時顯示，但 Compose 無法直接控制它的顯示，
-        // 為了避免重複顯示，我們在選擇後設為 false。
-        // 一個更好的方法可能是使用 Compose 內建的時間選擇器 (如果有的話) 或自訂。
-        // 這裡為了簡單起見，暫時這樣處理，並在點擊按鈕時將 showTimePicker 設為 true。
-        // 為了避免在 recomposition 時重複顯示，我們在 onDismissRequest 中設為 false。
-        // 但 TimePickerDialog 沒有 onDismissRequest，所以我們只在選擇後設 false。
-        // **注意**: 這種方式在 Compose 中不太理想，但作為範例，我們先這樣。
-        // **修正**: TimePickerDialog 本身會處理顯示，我們只需要將 showTimePicker 設為 false 即可。
-        // 我們將 showTimePicker 的控制移到按鈕點擊事件中。
     }
 
     Scaffold(

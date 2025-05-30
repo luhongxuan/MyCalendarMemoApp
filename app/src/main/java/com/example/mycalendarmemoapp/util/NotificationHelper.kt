@@ -66,10 +66,7 @@ object NotificationHelper {
                     pendingIntent
                 )
             } else {
-                // 引導使用者去設定開啟精確鬧鐘的權限
-                // 或者使用 setWindow/set inexact alarms
-                // 這裡為了簡化，我們假設權限已允許或使用非精確鬧鐘
-                alarmManager.setAndAllowWhileIdle( // 或者 setWindow
+                alarmManager.setAndAllowWhileIdle(
                     AlarmManager.RTC_WAKEUP,
                     triggerAtMillis,
                     pendingIntent
@@ -130,7 +127,7 @@ object NotificationHelper {
 
 
         val builder = NotificationCompat.Builder(context, CHANNEL_ID)
-            //.setSmallIcon(R.drawable.ic_notification_icon) // **請替換成你自己的通知圖示**
+            .setSmallIcon(R.drawable.ic_notification_icon) // **請替換成你自己的通知圖示**
             .setContentTitle("備忘錄提醒")
             .setContentText(title)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
@@ -148,7 +145,7 @@ object NotificationHelper {
                 Manifest.permission.POST_NOTIFICATIONS
             ) == PackageManager.PERMISSION_GRANTED
         } else {
-            true // Android 12 及以下版本不需要執行時權限
+            true
         }
     }
 }
