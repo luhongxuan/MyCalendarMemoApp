@@ -10,7 +10,7 @@ interface MemoDao {
     fun getMemosForDate(date: Long): Flow<List<Memo>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertMemo(memo: Memo)
+    suspend fun insertMemo(memo: Memo): Long
 
     @Delete
     suspend fun deleteMemo(memo: Memo)

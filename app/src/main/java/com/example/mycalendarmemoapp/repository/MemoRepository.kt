@@ -10,8 +10,8 @@ class MemoRepository(private val memoDao: MemoDao) {
         return memoDao.getMemosForDate(date)
     }
 
-    suspend fun insertMemo(memo: Memo) {
-        memoDao.insertMemo(memo)
+    suspend fun insertMemo(memo: Memo): Long {
+        return memoDao.insertMemo(memo)
     }
 
     suspend fun deleteMemo(memo: Memo) {

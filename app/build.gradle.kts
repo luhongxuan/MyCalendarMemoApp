@@ -75,6 +75,7 @@ dependencies {
 
     // Room Database
     implementation(libs.androidx.room.runtime)
+    implementation(libs.firebase.crashlytics.buildtools)
     kapt(libs.androidx.room.compiler) // 使用 Kapt 引用 Room Compiler
     implementation(libs.androidx.room.ktx)
 
