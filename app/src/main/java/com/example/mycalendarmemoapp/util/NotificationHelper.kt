@@ -127,7 +127,7 @@ object NotificationHelper {
 
 
         val builder = NotificationCompat.Builder(context, CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_notification_icon) // **請替換成你自己的通知圖示**
+            .setSmallIcon(R.drawable.ic_launcher) // **請替換成你自己的通知圖示**
             .setContentTitle("備忘錄提醒")
             .setContentText(title)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
